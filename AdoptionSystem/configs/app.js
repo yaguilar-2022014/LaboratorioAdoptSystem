@@ -23,7 +23,7 @@ app.use(morgan('dev')) //Crea logs de solicitudes al servidor HTTP
 
 //Declaración de rutas
 app.use(userRoutes)
-app.use(animalRoutes)
+app.use('/animal',animalRoutes)
 
 //Levantar Servidor
 export const initServer = () => {

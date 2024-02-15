@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose, { Schema, model } from "mongoose"
 
 const animalSchema = mongoose.Schema({
     name:{
@@ -12,7 +12,8 @@ const animalSchema = mongoose.Schema({
         enum: ['MALE', 'FEMALE']
     },
     keeper:{
-        type: String,
+        type: Schema.ObjectId,
+        ref: 'user',
         required: true
     },
     species:{
@@ -28,4 +29,4 @@ const animalSchema = mongoose.Schema({
     }
 })
 
-export default mongoose.model('animal', animalSchema)
+export default model('animal', animalSchema)
